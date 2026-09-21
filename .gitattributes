@@ -1,2 +1,38 @@
-# Auto detect text files and perform LF normalization
+# Normalize all files to LF in the repository. Checkouts use native EOL.
+
 * text=auto
+
+# Windows-oriented sources: keep CRLF on checkout for Visual Studio / MSVC
+*.cs    text eol=crlf
+*.xaml  text eol=crlf
+*.csproj text eol=crlf
+*.sln   text eol=crlf
+*.props text eol=crlf
+*.targets text eol=crlf
+*.vcxproj text eol=crlf
+*.c     text eol=crlf
+*.cpp   text eol=crlf
+*.h     text eol=crlf
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# Portable docs / config: LF
+*.md    text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Binary assets — never touch
+*.dll   binary
+*.exe   binary
+*.sys   binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+*.jpg   binary
+*.jpeg  binary
+*.bmp   binary
+*.woff  binary
+*.woff2 binary

@@ -1,0 +1,87 @@
+# ─── Hunter (Malware Analyzer) ───────────────────────────────────────────────
+# Build outputs, IDE state and machine-local files. Never commit these.
+
+# ---------------------------------------------------------------------------
+# .NET / Visual Studio
+# ---------------------------------------------------------------------------
+[Oo]bj/
+[Bb]in/
+[Ll]og/
+*.user
+*.suo
+*.nupkg
+*.snupkg
+*.csproj.user
+.vs/
+.vsconfig
+TestResults/
+*.coverage
+*.coveragexml
+
+# Custom / legacy output directories used by this repository
+AltOut/
+AltV2/
+bin_locked/
+Output/
+
+# ---------------------------------------------------------------------------
+# Native build artifacts (C / C++ / kernel driver)
+# ---------------------------------------------------------------------------
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.idb
+*.map
+*.def
+*.res
+*.pdb.snk
+*.pfx
+*.snk
+
+# Kernel driver build output
+*.sys
+.vs/
+
+# ---------------------------------------------------------------------------
+# Binary payloads — tracked exceptions below
+# ---------------------------------------------------------------------------
+*.dll
+*.exe
+*.bin
+*.dat
+*.cache
+
+# These three prebuilt native engines are runtime dependencies of the WPF app
+# (P/Invoke bridges). Keep them in the repository so a fresh clone builds and
+# runs out of the box. Rebuild them from src/HookEngine, src/NativeAnalyzer
+# and src/MalwareAnalyzer.UI/native/PeNative.c when the C sources change.
+!src/MalwareAnalyzer.UI/native/HookEngine.dll
+!src/MalwareAnalyzer.UI/native/NativeAnalyzer.dll
+!src/MalwareAnalyzer.UI/native/PeNative.dll
+
+# ---------------------------------------------------------------------------
+# Licenses, secrets, local config
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.local
+local.settings.json
+appsettings.*.local.json
+secrets.*
+*_key.pem
+*.key
+vmprotect-sdk/
+third_party/vmprotect/
+VMProtectSDK64.lib
+
+# ---------------------------------------------------------------------------
+# OS cruft
+# ---------------------------------------------------------------------------
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log
+*.dmp
